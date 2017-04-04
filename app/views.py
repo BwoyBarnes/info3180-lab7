@@ -24,9 +24,12 @@ def home():
 @app.route('/api/thumbnails')
 def images():
     """Returns JSON of links to all images on a website's page."""
-    images = {"error": "Null", "Messages":"Success","Thumbnails": get_images()}
+    images = {"error": "null", "message":"Success","thumbnails": get_images()}
     return jsonify(images)
 
+@app.route('/thumbnails/view')
+def thumbnails_view():
+    return render_template('thumbnails.html')
 
 ###
 # The functions below should be applicable to all Flask apps.

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block main %}
+<h1>View Images</h1>
+
+<div ng-app="thumbnail" ng-controller="myController">
+	<div class="row">
+        <div class="col-md-4" ng-repeat="image in images track by $index">
+            <div class="thumbnail">
+                <img src="{{'{{ image }}'}}" alt="{{'{{ image }}'}}" style="width:50%">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+  
+
+{% endblock %}
+{% block js %}
+<script src="/static/js/angular.min.js"></script>
+<script src="/static/js/app.js"></script>
+{% endblock %}
